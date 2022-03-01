@@ -30,3 +30,5 @@ AUTO_INCREMENT = 4
 parseInt vs Number
 Number is hard specified to be a number, where parseInt you are "pleading" it to be a number, and with parsing int, you are specifying to be an 
 integer but with number, it can be any type of number. 
+
+node is a js runtime enviorment 

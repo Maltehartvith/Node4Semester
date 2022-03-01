@@ -1,0 +1,1 @@
+document.getElementById("front-page-welcome").innerText = "My neck, my back";
