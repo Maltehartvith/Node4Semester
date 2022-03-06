@@ -1,2 +1,16 @@
 <br>
 <h1>Package.json</h1>
+
+<div class="content">
+    <div id="mid-content">
+        The package.json file is corresponding to the pom.xml file that we had in Spring Boot where we could inject our dependencies. Without our package.json we cant use npm install. Npm stands for Node Package Module and is the world largest software registry also know as libary. With the npm we can easily acces many predefindes libaries, which can also be edited to our own purpose. <br>
+        In our package.json we also write the name for the project, a description which can be used for people to find our package, and also a main, which defines the primary entry point for our program. We can also write scripts, which are shortcuts for terminal commands. We have used the script where we define a port for our program:<br>
+        <div id="codefont">
+        "scripts": {<br>
+            &emsp;"start-dev": "cross-env PORT=3000 nodemon app.js"<br>
+        }<br>
+        </div>
+        The cross-env is a npm package, which also can be installed, which is a cross-enviorment solution. The definition of PORT=3000 nodemon.js cant be used on all OS, but with cross-env, this enables the command to be runned on all OS. So instead of writing PORT=3000 nodemon app.js, we can write npm run start-dev, which is easier to remember, and will now run the same way. 
+        
+    </div>
+</div>

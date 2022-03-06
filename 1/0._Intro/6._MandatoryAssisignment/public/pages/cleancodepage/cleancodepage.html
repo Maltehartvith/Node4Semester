@@ -1,2 +1,30 @@
 <br>
 <h1>Clean code / code conventions</h1>
+
+<div class="content">
+    <div id="high-content">
+        Code is nice, I mean, who doesnt like code? It gives us a lot of oppotunities to create a very costumized webpage with a lot of cool functions. But what is better than code? Clean code! 
+        <br>By clean code, it is meant that the code is held simple. We dont want redundancy, because it is just a waste of memory and data, and the code just end up looking messy. Lets take an if / else code example where we reduce redundancy and make it look pretty:<br>
+        <br>
+        <div id="codefont" style="font-size: 13px;">
+            if(coderedundancy<2){let i =2}if(coderedundancy>2){let i =5}else{console.log("this is ugly")}
+        </div><br>
+Yeah, this is no good. Some methods can be done in a one liner, which can make them very smart, short and functional, but other codebits like if/else statements, can get very confusing if they are in one line. 
+<br>There's a lot of things in this example which can be done a lot better, so lets break it down, bit my bit.
+Our variable i, is instantiated multiple times, which doesnt really make sence. In this example, we want to change i, if one of the statements is true. Therefore, we can instantiate i before the statement: <div id="codefont"> let i = 0 </div>Another thing that is good practise is semicolon. You dont have to do it in JS, but it is a good way of saying: "here is the end of this code line". So if you're doing it, do it all the way! Otherwise, dont... at all.
+<br>We also like spacing. It helps with the readability and also make the code looks cleaner. And while we're at it, we can also do camel casing. Camel casing, helps the readability when we have multiple words in a variable or method name. The first word is all small casing, and after that, for each word added, we start the word with a big letter. Lets put spacing and camel casing together:
+<div id="codefont" style="font-size: 13px;">let i = 0; <br>
+if( codeRedundancy < 2 ) { i = 2 } if( codeRedundancy > 2 ) { i = 5 } else { console.log("this is still ugly") }</div>
+The code is way more readable, but the two last thing we need is line breaks and indentation. These two things go hand in hand. They helps us to see the scope of methods, statements and loops. Indentation helps us to see what is inside the statement, so lets say there's an if statement INSIDE a if statement, it can be hard to see it is inside, and not afterwards if there's no indentation. Line breaks, just makes the code more manageable in general. Lets add indentation, line break and semi colon, and see the final result:
+<div id="codefont" style="font-size: 13px;">
+let i = 0;<br>
+if( codeRedundancy < 2 ) {<br>
+    &emsp;i = 2;<br>
+} if( codeRedundancy > 2 ) { <br>
+    &emsp;i = 5;<br>
+} else { <br>
+    &emsp;console.log("Now THAT'S pretty code!");<br>
+}
+</div>
+    </div>
+</div>

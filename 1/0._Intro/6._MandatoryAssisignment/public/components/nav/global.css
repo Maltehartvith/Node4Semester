@@ -36,9 +36,9 @@
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
+  text-align: right;
   font-size: 36px;
-  margin-left: 50px;
+  margin-left: -25px;
 }
   
 /* Add an active class to the active dropdown button */
@@ -69,18 +69,55 @@ body{
 }
 
 #openbtn{
-  padding: 2px 2px 2px 2px;
+  padding: 8px 8px 8px 8px;
   border: solid black 1px;
   position: absolute;
-  left: 48%;
+  left: 47%;
   top: 0.5%;
   display: block;
-  transition: 0.3s;
+  transition: 0.5s;
+  background-color: rgba(60, 39, 90, 0.993);
+  border-radius: 20px;
+  
 }
 
 #openbtn:hover {
-  color: #2e2658;
+  color: #ffffff;
   cursor: pointer;
 
 }
 
+.content {
+  border: 2px solid black;
+  max-width: 800px;
+  height: 800px;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  background-color: #818181;
+  overflow: auto;
+  
+}
+
+#low-content{
+  font-size: 30px;
+  font-family: "Calibri";
+}
+
+#mid-content{
+  font-size: 25px;
+  font-family: "Calibri";
+}
+
+#high-content{
+  font-size: 20px;
+  font-family: "Calibri";
+}
+
+#codefont{
+  font-family: "Courier New";
+  color: rgb(21, 196, 21);
+}

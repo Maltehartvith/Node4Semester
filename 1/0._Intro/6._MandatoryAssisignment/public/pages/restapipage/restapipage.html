@@ -1,2 +1,36 @@
 <br>
 <h1>Rest API conventions</h1>
+
+<div class="content">
+    <div id="high-content">
+        To create a server: <br> 
+        Start off with making a package.json file (here we will have the dependencies) and remember to put {} into it. 
+        Afterwards use npm install in the folder and thereafter inject the dependency in package.json write:<br> 
+        <div id="codefont">
+        "dependencies": { <br> 
+            &emsp;"express": "version_number"<br> 
+        } </div>,  or you can use npm install express inside your folder. Afterwards you can use npm install again.<br> <br> 
+        After we have made this, we want to create our very own app.js file. In here is our application. We start with defining a express variable, 
+        that we do by importing express into this variable.<br> 
+        const express = require("express"); - and we also want to create an app variable, which is used with the express() method, that creates an express application:<br> 
+        <div id="codefont">const app = express();<br></div>
+        In the bottom of our code, we want to define the port we want our app to run on. We do that by using the app variable:<br> 
+         
+        <div id="codefont">
+        const PORT = 5000<br>
+        app.listen(PORT, () => {<br> 
+            &emsp;console.log("Server is running on:", PORT);<br> 
+        });<br> 
+        </div>
+        by calling the console.log method we will see in our terminal that "Server is running on: 5000", which gives us a clear message that our app is running. 
+        <br> Now we can use our .get, .post, .patch, .put and .delete method on our app, where you will write an endpoint, and a callback function that uses request and response 
+        - req, res for short. If we want information from the body, and use it in our method, we can use the request, 
+        and when we want to send something back from our method we use the respond, so the client get a response sent to them. 
+        A very simple example is from this assignment. The front page .get method is as following:<br> 
+        <div id="codefont">
+        app.get("/", (req, res) => {<br> 
+            &emsp;res.send(frontpageConCat);<br> 
+        });<br> 
+    </div>
+    </div>
+</div>

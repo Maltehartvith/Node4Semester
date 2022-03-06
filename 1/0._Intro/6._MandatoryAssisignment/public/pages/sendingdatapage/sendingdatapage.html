@@ -1,2 +1,37 @@
 <br>
 <h1>Sending Data</h1>
+
+<div class="content">
+    <div id="mid-content">
+        You can send data in express with a get request in two ways:<br>
+You can use path variable which is with a number: localhost:8080/beers/1<br>
+If you want to use path variable, you have to specify in the endpoint that you will use a path variable as so:
+
+<div id="codefont">
+    <br>
+app.get(`/beers/:beersId`, (req, res) => {}
+</div>
+<br>
+with the colon, it is specified that beersId is going to be the path variable, and so, you can use it with the req(uest).param.beerId, to get the path variable as a string. If you are going to use ID, where it is a number, you can simply use the Number notation infront of it:
+
+<div id="codefont" style="font-size: 15px;">
+    <br>
+app.get(`/beers/:beersId`, (req, res) => {<br>
+&emsp; const singleBeer = beerArray.filter(x => x.id === Number(req.params.beersId));<br>    
+&emsp; res.send(singleBeer);<br>
+});<br>
+<br>
+</div>
+
+You can also use Query string: ?key=value&key2=value2 <br>
+an example we have used is the kangaroofacts:  /kangaroofacts?canKick=true
+If you want to use query string, you just have to specify the endpoint, and then inside the app method, you will respond with a request query:
+<div id="codefont">
+    <br>
+app.get("/kangaroofacts", (req, res) => {<br>
+&emsp; res.send(req.query);<br>
+}); <br>
+</div>
+
+    </div>
+</div>

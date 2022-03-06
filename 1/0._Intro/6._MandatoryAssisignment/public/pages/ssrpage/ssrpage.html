@@ -1,2 +1,40 @@
 <br>
 <h1>Server side rendering</h1>
+<div class="content">
+    <div id="high-content">
+        Server side rendering is an applications abillity to convert HTML files on the server into a fully rendered HTML page for the client. 
+        This means that the web page itself is already rendered on the server, and doesnt have to be rendered in the browser each time it is used. 
+        This is great, since the page is getting loaded on the server, the client doesn't have to use as much time rendering the site themself. 
+        So the site will load faster for the client and impove their user experience.<br>
+        <br>
+        One of the ways to do this, and which we have learned, is by splitting up our HTML into components. Such as a footer, a header, a navigation menu, and the body. 
+        Here's an example on how you set these components together:<br>
+        First you build your different HTML components, in each their seperate folders. So lets say I have a nav components, which also contains the header of the HTML. <br>
+        <img src="./images/nav.JPG"> <br>
+        With this, we have the start of our HTML, and we also got our navigation into our body, now lets create some simple stuff to put inside our frontpage.<br>
+        <img src="./images/body.JPG"> &#8592; stuff <br>
+        Now lets close our HTML with a simple footer: <br>
+        <img src="./images/footer.JPG"> <br>
+        If we want this to work, we have to take each of these 3 components, and put them together, inside our server. First we import file system "fs", 
+        so we can use the readFileSync method, which returns the content of the path it is given. We also parse it into a string, with the toString method. It look like this: <br>
+        <div id="codefont" style="font-size: 14.5px;">
+        const fs = require("fs"); <br>
+        <br>
+        const nav = fs.readFileSync("./public/components/nav/nav.html").toString();<br>
+        const ssrpage = fs.readFileSync("./public/pages/ssrpage/ssrpage.html").toString();<br>
+        const footer = fs.readFileSync("./public/components/footer/footer.html").toString();<br>
+        </div> 
+        Now that we have instatiated our components into variables, we can concatenate them into one HTML site by doing so:
+        <div id="codefont" style="font-size: 13px;">
+        const ssrpageConCat = nav.replace("%%TITLE_PLACEHOLDER%%", "SSR page") + ssrpage + footer.replace("%$CR1PT", "");
+        </div>
+        The replace method, is only if you want different kind of files or names, into some elements of your HTML such as the title. Then you can type something, that you are sure
+        that you wouldnt write anywere else, and then use that text as a placeholder, to change for your purpose. <br>
+        Finally you can insert your concatenated string into an express get method, so you can send the site to your client: <br>
+        <div id="codefont" style="font-size: 14.5px;">
+            app.get("/ssr", (req, res) => {<br>
+                &emsp;res.send(ssrpageConCat);<br>
+            });<br>
+        </div>
+    </div>
+</div>

@@ -1,2 +1,22 @@
 <br>
 <h1>Importing in node.js</h1>
+
+<div class="content">
+    <div id="mid-content">
+        When you want to import something in node, you can use the require method, where you import something from another libary or file. 
+        <br>On this site, I have a folder, which construct the pages, and that file are seperated from my main app.js file. 
+        Then I can use the require method, which takes the elements i have chosen to export, which is done by defining a module.exports.  
+        <br>In this module.exports I choose what I want to export with  key value pairs, and in my app.js i can import all the values. 
+        I can also specify, if I only want two values from another file. 
+        <br>Underneath i will show how to import all values from a file and only two values from a file respectively:<br>
+        
+        <div id="codefont" style="font-size: 13px;">
+            <br>
+        const page = require('./public/pagebuilder/pagebuilder.js');<br>
+        const { importingpageConCat, bodyparsingPageConCat} = require('./public/pagebuilder/pagebuilder.js'); <br>
+        </div>
+        <br>
+        The example where I only choose two values, it is called destructuration.
+        
+    </div>
+</div>

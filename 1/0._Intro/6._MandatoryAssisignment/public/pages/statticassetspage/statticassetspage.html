@@ -1,2 +1,20 @@
 <br>
 <h1>Serving Stattic Assets in Express</h1>
+
+<div class="content">
+    <div id="mid-content">
+        When we were working with Spring Boot we had a static folder for the html files and css. In express we call it public. 
+        Inside this folder, we will make subfolders, for each category of items. <br>
+        If we want to have many HTML pages, we create a subfolder called pages, and inside this, we have a folder for each page, which makes it clean to look on, 
+        and easy to administrate. In this page folder, we can also have a specific .css and .js file for the specific page, if needed. <br>
+        We can also make folders for assets, and if we want to split our HTML into more elements, such as a header, navigator, body and footer, 
+        we can create these assets, and then assemble a full html page by putting these elements together. First of all, we have to make the public folder accesable 
+        and able for the client to reach. We do that with app.use(express.static('public'));<br>
+        An important note is when you are setting up path, in any of your assets, you have to think as if you are in the public folder. 
+        Lets say that you are in the frontpage folder, the folder structure would be mainfolder>public>pages>frontpage, 
+        but when you have to refere to a JavaScript file inside this folder, you must write the path as started from the public folder, 
+        since you have set it as the static folder. So if you have to refere to a file in the frontpage folder, and the file you're in is in the frontpage folder, 
+        you will write: ./pages/frontpage/frontpage.js.
+
+    </div>
+</div>
