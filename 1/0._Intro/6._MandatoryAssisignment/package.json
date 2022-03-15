@@ -1,14 +1,15 @@
 {
-  "name": "ssr",
+  "name": "mandatoryassignment",
   "version": "1.0.0",
-  "description": "SSR example in Express",
+  "description": "Mandatory Assignment",
   "main": "app.js",
   "scripts": {
+    "start-dev": "cross-env PORT=3000 nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Maltehartvith/SSR.git"
+    "url": "git+https://github.com/Maltehartvith/MandatoryAssignment.git"
   },
   "keywords": [
     "SSR",
@@ -17,9 +18,9 @@
   "author": "Malte Hartvith",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Maltehartvith/SSR/issues"
+    "url": "https://github.com/Maltehartvith/MandatoryAssignment/issues"
   },
-  "homepage": "https://github.com/Maltehartvith/SSR#readme",
+  "homepage": "https://github.com/Maltehartvith/MandatoryAssignment#readme",
   "dependencies": {
     "express": "^4.17.3",
     "nodemon": "^2.0.15"

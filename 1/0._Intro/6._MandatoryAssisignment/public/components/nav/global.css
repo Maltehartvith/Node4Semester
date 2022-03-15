@@ -1,49 +1,123 @@
 /* The side navigation menu */
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  }
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: rgba(29, 19, 44, 0.993); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
   
   /* The navigation menu links */
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
   
   /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
   
   /* Position and style the close button (top right corner) */
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  text-align: right;
+  font-size: 36px;
+  margin-left: -25px;
+}
   
-  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-  #main {
-    transition: margin-left .5s;
-    padding: 20px;
-  }
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: rgba(37, 22, 59, 0.993);
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: rgba(37, 22, 59, 0.644);
+  padding-left: 8px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+h1{
+  text-align: center;
+}
+
+body{
+  background-color: #110927b9;
+}
+
+#openbtn{
+  padding: 8px 8px 8px 8px;
+  border: solid black 1px;
+  position: absolute;
+  left: 47%;
+  top: 0.5%;
+  display: block;
+  transition: 0.5s;
+  background-color: rgba(60, 39, 90, 0.993);
+  border-radius: 20px;
   
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+}
+
+#openbtn:hover {
+  color: #ffffff;
+  cursor: pointer;
+
+}
+
+.content {
+  border: 2px solid black;
+  max-width: 800px;
+  height: 800px;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  background-color: #818181;
+  overflow: auto;
+  
+}
+
+#low-content{
+  font-size: 30px;
+  font-family: "Calibri";
+}
+
+#mid-content{
+  font-size: 25px;
+  font-family: "Calibri";
+}
+
+#high-content{
+  font-size: 20px;
+  font-family: "Calibri";
+}
+
+#codefont{
+  font-family: "Courier New";
+  color: rgb(21, 196, 21);
+}

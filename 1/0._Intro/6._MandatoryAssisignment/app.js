@@ -3,28 +3,65 @@ const app = express();
 
 app.use(express.static('public'));
 
-const fs = require("fs");
-
-const nav = fs.readFileSync("./public/components/nav/nav.html").toString();
-const footer = fs.readFileSync("./public/components/footer/footer.html").toString();
-const frontpage = fs.readFileSync("./public/pages/frontpage/frontpage.html").toString();
-const themeparkPage = fs.readFileSync("./public/pages/themepark/themepark.html").toString();
-
-
-const frontpageConCat = nav.replace("%%TITLE_PLACEHOLDER%%", "Front page") + frontpage + footer.replace("%$CR1PT", "");
-const themeparkConCat = nav.replace("%%TITLE_PLACEHOLDER%%", "Theme park") + themeparkPage + footer.replace("%$CR1PT", "");
+const page = require("./public/pagebuilder/pagebuilder.js")
 
 app.get("/", (req, res) => {
-    res.send(frontpageConCat);
+    res.send(page.frontpageConCat);
 });
 
-
-app.get("/themepark", (req, res) => {
-    res.send(themeparkConCat);
+app.get("/ssr", (req, res) => {
+    res.send(page.ssrpageConCat);
 });
 
+app.get("/loop", (req, res) => {
+    res.send(page.looppageConCat);
+});
 
-app.listen(8080, () =>{
-    console.log("Server is running on:", 8080);
+app.get("/node", (req, res) => {
+    res.send(page.nodepageConCat);
+});
 
+app.get("/nodemon", (req, res) => {
+    res.send(page.nodemonpageConCat);
+});
+
+app.get("/restapi", (req, res) => {
+    res.send(page.restapipageConCat);
+});
+
+app.get("/variable", (req, res) => {
+    res.send(page.variablepageConCat);
+});
+
+app.get("/callback", (req, res) => {
+    res.send(page.callbackpageConCat);
+});
+
+app.get("/package", (req, res) => {
+    res.send(page.packagepageConCat);
+});
+
+app.get("/cleancode", (req, res) => {
+    res.send(page.cleancodepageConCat);
+});
+
+app.get("/bodyparsing", (req, res) => {
+    res.send(page.bodyparsingPageConCat);
+});
+
+app.get("/sendingdata", (req, res) => {
+    res.send(page.sendingdatapageConCat);
+});
+
+app.get("/importing", (req, res) => {
+    res.send(page.importingpageConCat);
+});
+
+app.get("/statticassets", (req, res) => {
+    res.send(page.statticassetspageConCat);
+});
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () =>{
+    console.log("Server is running on:", PORT);
 });
