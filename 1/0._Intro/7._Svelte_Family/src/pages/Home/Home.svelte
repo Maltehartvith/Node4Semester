@@ -1,6 +1,9 @@
 <script>
     import Parent from '../../components/Parent/Parent.svelte'
-    import Child from '../../components/Child/Child.svelte';
+    import Child from '../../components/Child/Child.svelte'
+
+    import { supermarket } from '../../store/supermarket.js'
+    console.log($supermarket)
 const parents = [
     {
         key: 1,
@@ -29,8 +32,8 @@ const parents = [
 />
 
 <Child handleFamilyMeetingCall={onFamilyMeetingCalled} 
-       stereotype="" c
-       hildName="Alexis" 
+       stereotype="" 
+       childName="Alexis" 
        isGirl={true}
 />
 
@@ -38,3 +41,4 @@ const parents = [
        stereotype="bright-kid" 
        childName="Alexandar"
 />
+<p>{JSON.stringify($supermarket, null, 10)}</p>

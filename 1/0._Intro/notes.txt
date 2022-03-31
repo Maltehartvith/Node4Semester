@@ -32,3 +32,15 @@ Number is hard specified to be a number, where parseInt you are "pleading" it to
 integer but with number, it can be any type of number. 
 
 node is a js runtime enviorment 
+
+
+how to create a svelte project:
+npx degit sveltejs/template folderName
+
+for svelte, if you want more pages to change between, you can insert --single into the package.json,
+See 8._Kea_Shop as an example
+
+
+When we are creating a project with a client and server, we will open up two terminals. 
+The client terminal will run with npm run dev, and the server we can use nodemon.
+On our server we can install a database driver, in our case we use sqlite: npm i sqlite sqlite3
