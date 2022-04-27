@@ -44,3 +44,49 @@ See 8._Kea_Shop as an example
 When we are creating a project with a client and server, we will open up two terminals. 
 The client terminal will run with npm run dev, and the server we can use nodemon.
 On our server we can install a database driver, in our case we use sqlite: npm i sqlite sqlite3
+
+mongoose.com
+
+for at sætte en mongo db op skal man først lave en data folder i ens root
+og derefter skal man lave en db folder inde i den.
+Derefter kan man først kører ./mongod i et powershell vindue, og derefter
+køre ./mongo i en anden.
+
+Nu kan man vise databases ved at skrive show dbs, og lave en ny ved at skrive
+use dbnavn.
+Bagefter for at lave et "table" kan man skrive db.getCollection("navn")
+
+For at sætte noget ind i tablet skal man skrive: db.TableName.insert({ field: "name" })
+for at finde noget i en table kan man skrive db.TableName.find()
+ellers kan man søge ved at skrive db.TableName.find({ id: 2 }) hvis man
+fx har defineret id.
+Man kan også sætte conditions for ens search. Såsom db.TableName.find({ id: {$gt: 1}})
+$gt = greater than
+$lt = less than
+$et = equal to
+
+
+For at opdatere skal man skrive db.TableName.update({where}, {update})
+fx med video kan man skrive 
+db.tutorials.udate({ channelName: "How to Basic" }, {viewCounter: 123123123})
+men med denne linje vil man overskrive channelName og udskifte den med viewCounter.
+
+Det man kan gøre er at skrive { $set: { nytField } }, hvilket tilføjer det til objektet
+db.tutorials.udate({ channelName: "How to Basic" }, {$set: {viewCounter: 123123123}})
+Det man gør er at sætte et key value pair, hvor man så kan få tilføjet et ekstra field,
+til en allerede eksisterende mongoDB objekt
+
+
+For at slette én, kan man skrive db.TableName.deleteOne({ det man vil slette på })
+for at slette mange, kan man skrive db.TableName.deleteMany({ det man vil slette på})
+deleteMany, gør at man sletter alle som opfylder det kriterie man skriver ind,
+deleteOne sletter den første instans af det kriterie man har skrevet, og ikke flere.
+remove gør det sammen som deleteMany
+
+
+
+CRUD i mongodb
+c - insert
+r - find
+u - update
+d - deleteOne/deleteMany/remove
